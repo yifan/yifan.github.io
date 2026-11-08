@@ -39,10 +39,10 @@
   <div class="summary">
     <p>In short</p>
     <ul>
-      <li>Everything you enter stays on your device. We don't have servers, and the app doesn't send your data anywhere.</li>
+      <li>Everything you enter stays on your device. The app doesn't send your data anywhere, except a meal photo you choose to have recognised with AI.</li>
       <li>There are no accounts, ads, analytics or tracking.</li>
       <li>Apple Health is read only, only with your permission, and only for workouts.</li>
-      <li>Meal photos are checked on your device and never saved or uploaded.</li>
+      <li>Meal photos are checked on your device and not saved. A photo is only uploaded if you tap “Recognise with AI”, and then only that one photo.</li>
       <li>Purchases are handled entirely by Apple.</li>
     </ul>
   </div>
@@ -66,18 +66,26 @@
   <h2>Camera and meal photos</h2>
   <p>If you choose to log a meal from a photo, the app asks for access to your camera, or you can pick a photo from your library using Apple's photo picker. The photo is analysed on your iPhone with Apple's built-in image recognition. It is never uploaded or sent to us or anyone else, and it is not saved: only the short list of what it shows is kept, as described above. You can turn off camera access at any time in Settings › Exercise &amp; Eat.</p>
 
+  <h2>AI photo recognition (optional)</h2>
+  <p>On the photo screen you can tap “Recognise with AI” to have an AI model list the foods in that photo. Nothing is sent unless you tap it, and only that one photo is sent, reduced to about 1024 pixels. Your log, profile and Health data are never sent. The photo is sent in one of two ways:</p>
+  <ul>
+    <li><strong>With your own API key.</strong> If you add a key for an AI provider (such as Anthropic, OpenAI, Google Gemini, OpenRouter or a server you choose) in the app's settings, the photo goes straight from your iPhone to that provider. We never see the photo or your key. The provider handles the photo under its own terms and privacy policy. Your key is stored only in your iPhone's Keychain, and you can remove it at any time.</li>
+    <li><strong>With PRO.</strong> If you subscribe to PRO and haven't added your own key, the photo goes to our server, which passes it to OpenAI for recognition and returns the list of foods. With it, the app sends the signed App Store record of your subscription, so the server can check that it's active. That record identifies the subscription, not you: it contains no name, email or payment details. Our server does not save the photo. To apply the daily limit, it keeps a count of today's recognitions for each subscription, which is deleted automatically after two days. OpenAI handles the photo under its <a href="https://platform.openai.com/docs/guides/your-data">API data controls</a>.</li>
+  </ul>
+  <p>Our server runs on Cloudflare. Like any web service, Cloudflare processes your device's IP address to deliver the request; we don't store it.</p>
+
   <h2>Purchases and subscriptions</h2>
   <p>Exercise &amp; Eat PRO is sold as an auto-renewing subscription through the App Store. Payment, billing and your Apple Account details are handled by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>; we never see your payment information. The app checks your subscription status with Apple on your device to unlock PRO features. You can manage or cancel your subscription in Settings › your name › Subscriptions.</p>
 
   <h2>What we don't do</h2>
   <ul>
-    <li>We don't collect, sell or share personal information.</li>
+    <li>We don't sell personal information, or share it except to recognise a photo you send, as described above.</li>
     <li>We don't use analytics, advertising or tracking tools, and the app contains no third-party SDKs that collect data.</li>
     <li>We don't track you across other companies' apps or websites.</li>
   </ul>
 
   <h2>Children</h2>
-  <p>The app doesn't collect personal information from anyone, including children. Because everything stays on the device, we have no information to access, correct or delete on your behalf. You can edit or delete anything you've entered in the app, or delete the app to remove it all.</p>
+  <p>The app doesn't collect personal information from anyone, including children. Because everything you enter stays on the device and recognition photos are not kept, we have no information to access, correct or delete on your behalf. You can edit or delete anything you've entered in the app, or delete the app to remove it all.</p>
 
   <h2>Nutrition information</h2>
   <p>Vitamin, mineral and other nutrient values are estimates based on public data from the U.S. Department of Agriculture, and daily targets follow the U.S. Dietary Reference Intakes. They are for general information and are not medical advice.</p>
